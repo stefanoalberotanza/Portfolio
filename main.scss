@@ -300,10 +300,11 @@ $gutter-horizontal: 6rem;
         width: 100%;
         //background-image: linear-gradient(-120deg, $color-primary-light, $color-gradient-1);
         background-color: $color-header;
+        overflow: hidden;
     }
 
     &__image{
-        height: 70vh;
+        height: 100%;
     }
 
     &__text-box{
@@ -406,21 +407,14 @@ $gutter-horizontal: 6rem;
     padding: 6rem 0;
     background-color: $color-about;
     
-    @include responsive(67.8125em){
-        padding: 5.5rem 6rem;
-    }
-
-    @include respond(tab-port){
-        padding: 6rem 4rem;
-    }
+    
 
     &__left{
         @include respond(tab-port){
             visibility: hidden;
-            position: absolute;
+            position: absolute;    
         }
     }
-    
 
     &__image{
         background-color: red;
@@ -428,6 +422,8 @@ $gutter-horizontal: 6rem;
     }
 
     &__description{
+        width:90%;
+        margin: 0 auto;
         padding: 2rem 1rem;
         font-size: 5rem;
         background-color: $color-white;
@@ -442,21 +438,17 @@ $gutter-horizontal: 6rem;
     @include responsive(67.8125em){
         padding: 5.5rem 6rem;
     }
+
     @include respond(phone){
         padding: 2rem 3rem;
     }
 }
 
 .form{
-    
+
     &__group{
         margin-bottom: 3rem;
         margin-top: 1.7rem;
-        margin-right: -5.4rem;
-
-        @include responsive(67.8125em){
-            margin-left: 2rem;
-        }
     }
 
     &__input{
@@ -470,8 +462,9 @@ $gutter-horizontal: 6rem;
         &:placeholder-shown + .form__label {
             opacity: 0;
             visibility: hidden;
-            transform: translateY(-4rem); 
+            transform: translateY(-4rem);
         }
+
 
         &:focus{
             outline: none;
@@ -486,7 +479,7 @@ $gutter-horizontal: 6rem;
         margin-top: .8rem;
         margin-left: .8rem;
         display: block;
-        transition: all .3s;
+        transition: all .3s; 
     }
 }
 
@@ -495,13 +488,15 @@ $gutter-horizontal: 6rem;
     width: 90% !important;
     padding: .8rem;
     font-family: 'Arimo', sans-serif;
+    border: none;
+    transition: all .3s;
 
-    &:placeholder-shown + .form__label {
+    &:placeholder-shown + .form__label{
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-4rem); 
+        transform: translateY(-4rem);
     }
-    
+
     &:focus{
         outline: none;
         border-bottom: 3px solid #55c57a;
@@ -515,13 +510,11 @@ $gutter-horizontal: 6rem;
         background-color: $color-white;
         box-shadow: 0 1rem 2rem rgba($color-black,0.2);
         padding: 2rem 4rem;
-        
     }
 
     &__text{
         background-image: linear-gradient($color-navigation-effect-1,$color-navigation-effect-2);
-        text-transform: uppercase;
-        font-size: 2.4rem;
+        font-size: 2.3rem;
     }
 
     &__btn{
